@@ -15,6 +15,7 @@ const Modal = (props) => {
                     <img src={props.imagePath} alt="img" className="modal-poster"></img>
                     <div className="modal-header">
                         <h2>{props.title}</h2>
+                        <h3>{props.release_date}</h3>
                     </div>
                     <div className="modal-body">
                         <p>{props.overview}</p>

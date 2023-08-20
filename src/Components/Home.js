@@ -67,12 +67,12 @@ const Home = () => {
                     </form>
                 </div>
             </div>
-            <div >
+            <div className="container" >
                 {movie.length === 0 ? (
                     <p className="not found"> Not Found </p>
                 ) : (
                     movie.map((res) => {
-                        return (<div className="container">
+                        return (<div className="main-div" >
                             <Card info={res} key={res.id} />
                         </div>)
                     })

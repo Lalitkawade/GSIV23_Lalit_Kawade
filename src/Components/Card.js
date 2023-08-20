@@ -38,6 +38,7 @@ const Card = (props) => {
            title={props.info.title}
            overview={props.info.overview}
            imagePath={image_path+props.info.poster_path}
+           release_date={props.info.release_date}
            /> }
 
         </div>
