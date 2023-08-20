@@ -23,6 +23,7 @@ const Home = () => {
         fetchAPI();
     }, []);
 
+
     const searchMovie = () => {
         let url = `https://api.themoviedb.org/3/search/movie?query=${search}&api_key=265b2af6676da7d8b7252166f4c49da5`;
 
@@ -32,28 +33,31 @@ const Home = () => {
             .catch((error) => console.error("Error searching movies:", error));
     };
 
+ useEffect(() => {
+        searchMovie();
+    }, [search]);
+
     return (
         <>
             <div className="header">
                 <div>
                     <form>
                         <div className="search-btn">
-                            <button type="button" onClick={searchMovie}>
-                                <i className="fa-solid fa-magnifying-glass"></i>
-                            </button>
-                            <input
-                                type="text"
-                                placeholder="Enter Movie Name"
-                                className="inputText"
-                                value={search}
-                                onChange={(e) => setSearch(e.target.value)}
-                                onKeyDown={(e) => {
-                                    if (e.key === "Enter") {
-                                        e.preventDefault(); // Prevent form submission
-                                        searchMovie();
-                                    }
-                                }}
-                            />
+                            <div className="search-div">
+                                <i className="fa-solid fa-magnifying-glass" style={{ color: "#b1b8c4" }}></i>
+                                <input
+                                    type="text"
+                                    placeholder="Search"
+                                    className="inputText"
+                                    value={search}
+                                    onChange={(e) => setSearch(e.target.value)}
+                                    onKeyDown={(e) => {
+                                        if (e.key === "Enter") {
+                                            e.preventDefault();
+                                            searchMovie();
+                                        }
+                                    }}
+                                /></div>
                             <div className="home-icon">
                                 <button>
                                     <i className="fa-solid fa-house"></i>
@@ -68,7 +72,9 @@ const Home = () => {
                     <p className="not found"> Not Found </p>
                 ) : (
                     movie.map((res) => {
-                        return <Card info={res} key={res.id} />;
+                        return (<div>
+                            <Card info={res} key={res.id} />
+                        </div>)
                     })
                 )}
             </div>

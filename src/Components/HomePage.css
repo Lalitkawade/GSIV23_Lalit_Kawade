@@ -4,24 +4,23 @@
 }
 
 body{
-  background-color: #9b9b9b;
+  background-color: white;
 }
 
 .header{
-  background-color: rgb(164, 180, 180);
+  background-color: white;
 }
 
 .container  {
   margin: 20px;
   width: 80%;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 30% 30% 30%;
 }
 
 .movie {
   box-shadow: 0 5px 10px rgb(157, 155, 155);
-  width: calc(33.33% - 2rem); /* Adjust the width for more movies in a row */
+  width: calc(33.33% - 2rem);
   background-color: #DFDFDF;
   margin: 1rem;
   border-radius: 5px;
@@ -64,20 +63,27 @@ align-items: center;
 
 .search-btn {
   display: flex;
-  align-items: center;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  padding: 5px;
-  max-width: 300px; 
+  justify-content: space-between;
+  align-items: center ;
+  background-color: white;
+  padding: 15px;
+  width: 90vw;
+  height: 30px;
+  margin: 5vh 5vw 0 5vw; 
+  box-shadow: 0px 5px 2px #DFDFDF;
 }
 
 .inputText {
   flex: 1;
   border: none;
   padding: 5px 30px 5px 10px; 
-  outline: #DFDFDF;
-  border-radius: 5px;
+  background-color: #ccc;
   background-size: 20px;
+  max-width: 800px;
+  width: 400px;
+  border-radius: 0px 5px 5px 0px;
+  height: 20px;
+  outline: none;
 }
 
 .search-btn button {
@@ -85,6 +91,8 @@ align-items: center;
   border: none;
   cursor: pointer;
   padding: 5px;
+  background-color: #ccc;
+  border-radius: 5px 0px 0px 5px;
 }
 
 .home-icon button {
@@ -92,4 +100,11 @@ align-items: center;
   border: none;
   cursor: pointer;
   padding: 5px;
+}
+
+.search-div{
+  background-color: #ccc;
+  border-radius: 5px 5px 5px 5px;
+  padding-left: 5px;
+
 }
