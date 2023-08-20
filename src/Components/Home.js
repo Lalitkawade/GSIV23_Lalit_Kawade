@@ -33,9 +33,9 @@ const Home = () => {
             .catch((error) => console.error("Error searching movies:", error));
     };
 
- useEffect(() => {
+    useEffect(() => {
         searchMovie();
-    }, [search]);
+    },[search]);
 
     return (
         <>
@@ -67,12 +67,12 @@ const Home = () => {
                     </form>
                 </div>
             </div>
-            <div className="container">
+            <div >
                 {movie.length === 0 ? (
                     <p className="not found"> Not Found </p>
                 ) : (
                     movie.map((res) => {
-                        return (<div>
+                        return (<div className="container">
                             <Card info={res} key={res.id} />
                         </div>)
                     })

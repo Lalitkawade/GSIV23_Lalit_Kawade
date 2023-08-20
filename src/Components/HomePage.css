@@ -12,53 +12,38 @@ body{
 }
 
 .container  {
-  margin: 20px;
-  width: 80%;
   display: grid;
-  grid-template-columns: 30% 30% 30%;
 }
 
 .movie {
-  box-shadow: 0 5px 10px rgb(157, 155, 155);
-  width: calc(33.33% - 2rem);
+  width: calc((100% - 80px) / 5);
+  margin: 10px;
+  display: grid;
+  grid-template-columns: auto;
+  cursor: pointer;
   background-color: #DFDFDF;
-  margin: 1rem;
-  border-radius: 5px;
-  box-sizing: border-box;
-  overflow: hidden;
-  position: relative;
+  border-radius: 9px;
 }
 
-.movie .poster{
+.poster {
   width: 100%;
-  height: 250px;
+  height: auto;
+  border-radius: 5px 5px 0px 0px;
 }
 
-.movie-detail{
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-}
-
-.box {
+.box{
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  margin: 5px 0; 
-  padding-right: 10px; 
+  padding: 0px 10px 0 10px;
 }
 
-
-.movie-detail .title{
-  width: 160px;
-  text-align: center;
-  padding-left: -10px;
-}
-
-.overview{
-  padding: 10px 10px 10px 10px;
-  font-size: 13px;
+.overview {
+  padding: 10px;
+  line-height: 1;
+  color: #555;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-height: 2.7em;
 }
 
 .search-btn {
@@ -106,5 +91,31 @@ align-items: center;
   background-color: #ccc;
   border-radius: 5px 5px 5px 5px;
   padding-left: 5px;
+}
 
+.modal-overlay{
+  width: 50%;
+  height: 50%;
+  background-color: rgba(221, 215, 215, 0.7);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: inherit;
+}
+
+.modal-content{
+  width: 300px;
+  height: 20px;
+  border-radius: 10px;
+  background-color: #ccc;
+  margin:auto ;
+  margin-top: 40px;
+}
+
+.modal-poster {
+  width: 100%;
+  height: auto;
+  border-radius: 5px 5px 0px 0px;
 }
